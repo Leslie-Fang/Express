@@ -8,6 +8,6 @@ router.get('/',function(req,res){
 })
 
 router.use('/user',user);
-router.use('/justforfun',game);
+router.use('/game',game);
 
 module.exports = router;

@@ -1,0 +1,1 @@
+var express=require("express"),router=express.Router(),user=require("./user.js"),game=require("./game.js"),react=require("./reactroute.js"),bootstrip=require("./bootstrip.js");router.get("/",function(e,r){r.send("index!")}),router.use("/user",user),router.use("/game",game),router.use("/react",react),router.use("/bootstrip",bootstrip),module.exports=router;

@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var conf = require('./config.js');
-var routes = require('./routes');
+var routes = require('./build/routes');
 var ejs = require('ejs');
 
 //set the route of the views

@@ -14,7 +14,11 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "child_process": "^1.0.2",
     "gulp": "^3.9.1",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-react": "^3.1.0",
     "gulp-uglify": "^2.0.1"
   }
 }

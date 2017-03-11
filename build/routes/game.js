@@ -1,0 +1,1 @@
+var express=require("express"),router=express.Router();router.get("/",function(e,r){r.render("main")}),router.get("/mgame",function(e,r){r.send("test gulp again restart!")}),module.exports=router;

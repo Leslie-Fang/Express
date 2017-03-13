@@ -100,7 +100,10 @@ var Board = React.createClass({
        );
    }
 });
+
 ReactDOM.render(
     <Board />,
     document.getElementById('example')
 );
+
+module.exports = Vistor;

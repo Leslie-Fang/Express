@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var exec = require('child_process').exec;
-var server = require( 'gulp-develop-server' );
+var server = require( 'gulp-develop-server');
 
 var Paths = {
     routes_src:'routes/*.js',

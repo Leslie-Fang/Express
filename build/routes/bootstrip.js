@@ -1,1 +1,1 @@
-var express=require("express"),router=express.Router();router.get("/",function(e,r){r.render("bootstrip")}),module.exports=router;
+var express=require("express"),router=express.Router();router.get("/",function(e,r){r.render("bootstrip")}),router.get("/webpack",function(e,r){r.render("webpacktest")}),module.exports=router;

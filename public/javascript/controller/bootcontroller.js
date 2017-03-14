@@ -1,6 +1,3 @@
-//import Vistor from './reactjs1_control.js';
-var Vis = require('./reactjs1_control.js');
-
 var Column = React.createClass({
     render : function(){
     return (

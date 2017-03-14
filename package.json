@@ -10,16 +10,21 @@
   "author": "leslie",
   "license": "ISC",
   "dependencies": {
+    "babel-loader": "^6.4.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2"
   },
   "devDependencies": {
     "babelify": "^7.3.0",
     "child_process": "^1.0.2",
+    "css-loader": "^0.27.3",
     "gulp": "^3.9.1",
     "gulp-develop-server": "^0.5.2",
     "gulp-react": "^3.1.0",
     "gulp-uglify": "^2.0.1",
+    "react": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.13.2",
     "webpack": "^2.2.1"
   }
 }

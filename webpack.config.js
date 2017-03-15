@@ -1,8 +1,11 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './public/javascript/controller/webpacktest.js',
+    entry: {
+        reacttest2:'./public/javascript/babel/reacttest2.js'
+    },
     output: {
-        filename: './public/javascript/controller/boudle.js'
+        path : './public/javascript/webpack/',
+        filename: '[name].js'
     }
 }

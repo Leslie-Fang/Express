@@ -1,15 +1,17 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
+var babel = require('gulp-babel');
 var exec = require('child_process').exec;
 var server = require( 'gulp-develop-server');
+//var webpack = require('gulp-webpack');
 
 var Paths = {
     routes_src:'routes/*.js',
     routes_dest:'build/routes',
     html_src:'views/**',
-    js_src:'public/javascript/controller/**'
-
-
+    js_src:'public/javascript/controller/**',
+    react_src:'public/javascript/react/*.js',
+    react_dest:'public/javascript/babel'
 };
 
 gulp.task('routes',function(){
@@ -18,7 +20,27 @@ gulp.task('routes',function(){
         .pipe(gulp.dest(Paths.routes_dest));
 });
 
+gulp.task('babel_JSX',function(){
+    gulp.src(Paths.react_src)
+        .pipe(babel())
+        .pipe(gulp.dest(Paths.react_dest));
+});
 
+/*
+gulp.task('webpack',function(){
+    gulp.src(Paths.webpack_src)
+        .pipe(webpack())
+        .pipe(gulp.dest(Paths.webpack_dest));
+});*/
+
+
+gulp.task('webpack', function (cb) {
+    exec('webpack', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+});
 /*
  gulp.task('start', function (cb) {
  exec('npm start', function (err, stdout, stderr) {
@@ -49,7 +71,7 @@ gulp.task( 'server.restart', function() {
 });
 
 gulp.task('watch',function(){
-    gulp.watch([Paths.routes_src,Paths.html_src,Paths.js_src],['routes','server.restart']);
+    gulp.watch([Paths.routes_src,Paths.html_src,Paths.js_src,Paths.react_src],['routes','babel_JSX','webpack','server.restart']);
 });
 
-gulp.task('default', ['routes','server:start','watch']);
+gulp.task('default', ['routes','babel_JSX','webpack','server:start','watch']);

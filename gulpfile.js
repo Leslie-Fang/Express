@@ -71,7 +71,7 @@ gulp.task( 'server.restart', function() {
 });
 
 gulp.task('watch',function(){
-    gulp.watch([Paths.routes_src,Paths.html_src,Paths.js_src,Paths.react_src],['routes','babel_JSX','server.restart']);
+    gulp.watch([Paths.routes_src,Paths.html_src,Paths.js_src,Paths.react_src],['routes','babel_JSX','webpack','server.restart']);
 });
 
 gulp.task('default', ['routes','babel_JSX','webpack','server:start','watch']);

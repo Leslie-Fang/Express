@@ -63,11 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -234,13 +235,14 @@ ReactDOM.render(React.createElement(
 module.exports = { Vistor: Vistor };
 
 /***/ }),
-/* 1 */
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var rt1 = __webpack_require__(0);
+var rt1 = __webpack_require__(1);
 var Vistor = rt1.Vistor;
 
 console.log('dasd');

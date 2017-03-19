@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 77);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
+/******/ ({
+
+/***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -221,6 +221,22 @@ var Board = React.createClass({
     }
 });
 
+var Ad = React.createClass({
+    displayName: 'Ad',
+
+    render: function render() {
+        return React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'h3',
+                null,
+                'adadad'
+            )
+        );
+    }
+});
+
 ReactDOM.render(React.createElement(
     'div',
     null,
@@ -232,36 +248,19 @@ ReactDOM.render(React.createElement(
     React.createElement(Board, null)
 ), document.getElementById('example'));
 
-module.exports = { Vistor: Vistor };
+module.exports = { Vistor: Vistor, Ad: Ad };
 
 /***/ }),
-/* 2 */,
-/* 3 */
+
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var rt1 = __webpack_require__(1);
+var rt1 = __webpack_require__(33);
 var Vistor = rt1.Vistor;
-
-console.log('dasd');
-
-var Ad = React.createClass({
-    displayName: "Ad",
-
-    render: function render() {
-        return React.createElement(
-            "div",
-            null,
-            React.createElement(
-                "h3",
-                null,
-                "adadad"
-            )
-        );
-    }
-});
+var Ad = rt1.Ad;
 
 var Board = React.createClass({
     displayName: "Board",
@@ -303,4 +302,5 @@ ReactDOM.render(React.createElement(
 ), document.getElementById('example3'));
 
 /***/ })
-/******/ ]);
+
+/******/ });

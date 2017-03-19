@@ -1,1 +1,1 @@
-var express=require("express"),router=express.Router();router.get("/",function(e,r){r.render("react")}),module.exports=router;
+var express=require("express"),router=express.Router();router.get("/",function(e,r){r.render("react")}),router.get("/reactES5",function(e,r){r.render("reactES5")}),module.exports=router;

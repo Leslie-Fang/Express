@@ -1,38 +1,32 @@
-import {Componet2, a} from "../babel/reactEs6test2.js";
-
-console.log(a);
-console.log(Componet2);
-
-class HelloMessage2 extends React.Component {
-    render() {
-        return(
-            <div>
-                <div>Hello world {this.props.name}</div>
-            </div>
-        );
-    }
-}
-console.log(HelloMessage2);
-
-class Test extends React.Component {
-    render() {
-        return(
-            <div>
-                <p>come on!</p>
-            </div>
-        );
-    }
-}
+import {Provider} from 'react-redux';
+import {Componet2, Myheader,Todolist,HelloMessage2,Test,App} from "../babel/component/reactEs6test2.js";
+import {store} from "./store.js"
 
 class Board extends React.Component{
+    constructor(props) {
+        super(props);
+    }
     render(){
         return(
-            <div>
-                <HelloMessage2 name="leslie"/>
-                <Test/>
-                <Componet2/>
-            </div>
+            <Provider store={store}>
+                <div>
+                    <Myheader/>
+                    <HelloMessage2 name="leslie"/>
+                    <Test/>
+                    <Componet2/>
+                    <Todolist/>
+                    <App />
+                </div>
+            </Provider>
         );
     }
 }
 ReactDOM.render(<Board/>, document.getElementById('example'));
+
+
+
+
+
+
+
+

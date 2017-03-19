@@ -103,6 +103,16 @@ var Board = React.createClass({
     }
 });
 
+var Ad = React.createClass({
+    render : function(){
+        return (
+            <div>
+                <h3>adadad</h3>
+            </div>
+        );
+    }
+});
+
 ReactDOM.render(
     <div>
         <h1>Hello, world!</h1>
@@ -111,4 +121,4 @@ ReactDOM.render(
     document.getElementById('example')
 );
 
-module.exports = {Vistor: Vistor};
+module.exports = {Vistor: Vistor,Ad:Ad};

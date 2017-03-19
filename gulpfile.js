@@ -9,9 +9,16 @@ var Paths = {
     routes_src:'routes/*.js',
     routes_dest:'build/routes',
     html_src:'views/**',
-    js_src:'public/javascript/controller/**',
     react_src:'public/javascript/react/*.js',
-    react_dest:'public/javascript/babel'
+    react_dest:'public/javascript/babel',
+    webpack_config:'./webpack.config.js',
+    gulp_config:'./gulpfile.js',
+    reducers_src:'public/javascript/react/reducers/*.js',
+    reducers_dest:'public/javascript/babel/reducers',
+    containers_src:'public/javascript/react/containers/*.js',
+    containers_dest:'public/javascript/babel/containers',
+    component_src:'public/javascript/react/component/*.js',
+    component_dest:'public/javascript/babel/component'
 };
 
 gulp.task('routes',function(){
@@ -24,6 +31,24 @@ gulp.task('babel_JSX',function(){
     gulp.src(Paths.react_src)
         .pipe(babel())
         .pipe(gulp.dest(Paths.react_dest));
+});
+
+gulp.task('babel_reducers',function(){
+    gulp.src(Paths.reducers_src)
+        .pipe(babel())
+        .pipe(gulp.dest(Paths.reducers_dest));
+});
+
+gulp.task('babel_containers',function(){
+    gulp.src(Paths.containers_src)
+        .pipe(babel())
+        .pipe(gulp.dest(Paths.containers_dest));
+});
+
+gulp.task('babel_component',function(){
+    gulp.src(Paths.component_src)
+        .pipe(babel())
+        .pipe(gulp.dest(Paths.component_dest));
 });
 
 /*
@@ -71,7 +96,10 @@ gulp.task( 'server.restart', function() {
 });
 
 gulp.task('watch',function(){
-    gulp.watch([Paths.routes_src,Paths.html_src,Paths.js_src,Paths.react_src],['routes','babel_JSX','webpack','server.restart']);
+    gulp.watch(
+        [Paths.routes_src,Paths.html_src,Paths.react_src,Paths.webpack_config,Paths.gulp_config,Paths.reducers_src,Paths.containers_src,Paths.component_src],
+        ['routes','babel_JSX','babel_reducers','babel_containers','babel_component','webpack','server.restart']
+    );
 });
 
-gulp.task('default', ['routes','babel_JSX','webpack','server:start','watch']);
+gulp.task('default', ['routes','babel_JSX','babel_reducers','babel_containers','babel_component','webpack','server:start','watch']);

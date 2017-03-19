@@ -1,25 +1,8 @@
 "use strict";
 
-var rt1 = require("../babel/reacttest1.js");
+var rt1 = require("../babel/component/reacttest1.js");
 var Vistor = rt1.Vistor;
-
-console.log('dasd');
-
-var Ad = React.createClass({
-    displayName: "Ad",
-
-    render: function render() {
-        return React.createElement(
-            "div",
-            null,
-            React.createElement(
-                "h3",
-                null,
-                "adadad"
-            )
-        );
-    }
-});
+var Ad = rt1.Ad;
 
 var Board = React.createClass({
     displayName: "Board",

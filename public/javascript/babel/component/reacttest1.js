@@ -147,6 +147,22 @@ var Board = React.createClass({
     }
 });
 
+var Ad = React.createClass({
+    displayName: 'Ad',
+
+    render: function render() {
+        return React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'h3',
+                null,
+                'adadad'
+            )
+        );
+    }
+});
+
 ReactDOM.render(React.createElement(
     'div',
     null,
@@ -158,4 +174,4 @@ ReactDOM.render(React.createElement(
     React.createElement(Board, null)
 ), document.getElementById('example'));
 
-module.exports = { Vistor: Vistor };
+module.exports = { Vistor: Vistor, Ad: Ad };

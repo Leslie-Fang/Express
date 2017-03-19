@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -6,41 +6,60 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _reactRedux = require('react-redux');
+
+var _redux = require('redux');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Componet2 = exports.Componet2 = function (_React$Component) {
-    _inherits(Componet2, _React$Component);
+function mapStateToProps(state) {
+    return {
+        users: state.users
+    };
+}
 
-    function Componet2() {
-        _classCallCheck(this, Componet2);
+var Container1 = function (_React$Component) {
+    _inherits(Container1, _React$Component);
 
-        return _possibleConstructorReturn(this, (Componet2.__proto__ || Object.getPrototypeOf(Componet2)).apply(this, arguments));
+    function Container1(props) {
+        _classCallCheck(this, Container1);
+
+        return _possibleConstructorReturn(this, (Container1.__proto__ || Object.getPrototypeOf(Container1)).call(this, props));
     }
 
-    _createClass(Componet2, [{
-        key: "render",
+    _createClass(Container1, [{
+        key: 'createListItems',
+        value: function createListItems() {
+            return this.props.users.map(function (user) {
+                return React.createElement(
+                    'li',
+                    { key: user.id },
+                    user.first,
+                    ' ',
+                    user.last
+                );
+            });
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
+                'div',
                 null,
                 React.createElement(
-                    "p",
+                    'ul',
                     null,
-                    "component2"
+                    this.createListItems()
                 )
             );
         }
     }]);
 
-    return Componet2;
+    return Container1;
 }(React.Component);
 
-;
-
-//ReactDOM.render(<componet2/>, document.getElementById('example2'));
-
-var a = exports.a = 123;
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Container1);

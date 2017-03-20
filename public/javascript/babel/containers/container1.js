@@ -10,6 +10,8 @@ var _reactRedux = require('react-redux');
 
 var _redux = require('redux');
 
+var _index = require('../../babel/actions/index');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -20,6 +22,10 @@ function mapStateToProps(state) {
     return {
         users: state.users
     };
+}
+
+function matchDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)({ selectUser: _index.selectUser, addUser: _index.addUser, deleteUser: _index.deleteUser }, dispatch);
 }
 
 var Container1 = function (_React$Component) {
@@ -34,15 +40,45 @@ var Container1 = function (_React$Component) {
     _createClass(Container1, [{
         key: 'createListItems',
         value: function createListItems() {
-            return this.props.users.map(function (user) {
-                return React.createElement(
-                    'li',
-                    { key: user.id },
-                    user.first,
-                    ' ',
-                    user.last
-                );
-            });
+            var _this2 = this;
+
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'ul',
+                    null,
+                    this.props.users.map(function (user) {
+                        return React.createElement(
+                            'div',
+                            null,
+                            React.createElement(
+                                'li',
+                                { key: user.id, onClick: function onClick() {
+                                        return _this2.props.selectUser(user);
+                                    } },
+                                user.first,
+                                ' ',
+                                user.last
+                            ),
+                            React.createElement(
+                                'button',
+                                { className: 'btn btn-primary', onClick: function onClick() {
+                                        return _this2.props.deleteUser(user);
+                                    } },
+                                'Delete'
+                            )
+                        );
+                    })
+                ),
+                React.createElement(
+                    'button',
+                    { className: 'btn btn-primary', onClick: function onClick() {
+                            return _this2.props.addUser();
+                        } },
+                    'Add'
+                )
+            );
         }
     }, {
         key: 'render',
@@ -50,11 +86,7 @@ var Container1 = function (_React$Component) {
             return React.createElement(
                 'div',
                 null,
-                React.createElement(
-                    'ul',
-                    null,
-                    this.createListItems()
-                )
+                this.createListItems()
             );
         }
     }]);
@@ -62,4 +94,4 @@ var Container1 = function (_React$Component) {
     return Container1;
 }(React.Component);
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Container1);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps)(Container1);

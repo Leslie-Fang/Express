@@ -9,16 +9,18 @@ var Paths = {
     routes_src:'routes/*.js',
     routes_dest:'build/routes',
     html_src:'views/**',
-    react_src:'public/javascript/react/*.js',
-    react_dest:'public/javascript/babel',
     webpack_config:'./webpack.config.js',
     gulp_config:'./gulpfile.js',
+    /*react_src:'public/javascript/react/*.js',
+    react_dest:'public/javascript/babel',
     reducers_src:'public/javascript/react/reducers/*.js',
     reducers_dest:'public/javascript/babel/reducers',
     containers_src:'public/javascript/react/containers/*.js',
     containers_dest:'public/javascript/babel/containers',
     component_src:'public/javascript/react/component/*.js',
-    component_dest:'public/javascript/babel/component'
+    component_dest:'public/javascript/babel/component',*/
+    react_src:'public/javascript/react/**/*.js',
+    react_dest:'public/javascript/babel'
 };
 
 gulp.task('routes',function(){
@@ -27,6 +29,7 @@ gulp.task('routes',function(){
         .pipe(gulp.dest(Paths.routes_dest));
 });
 
+/*
 gulp.task('babel_JSX',function(){
     gulp.src(Paths.react_src)
         .pipe(babel())
@@ -49,8 +52,13 @@ gulp.task('babel_component',function(){
     gulp.src(Paths.component_src)
         .pipe(babel())
         .pipe(gulp.dest(Paths.component_dest));
-});
+});*/
 
+gulp.task('babel',function(){
+    gulp.src(Paths.react_src)
+        .pipe(babel())
+        .pipe(gulp.dest(Paths.react_dest));
+});
 /*
 gulp.task('webpack',function(){
     gulp.src(Paths.webpack_src)
@@ -97,9 +105,9 @@ gulp.task( 'server.restart', function() {
 
 gulp.task('watch',function(){
     gulp.watch(
-        [Paths.routes_src,Paths.html_src,Paths.react_src,Paths.webpack_config,Paths.gulp_config,Paths.reducers_src,Paths.containers_src,Paths.component_src],
-        ['routes','babel_JSX','babel_reducers','babel_containers','babel_component','webpack','server.restart']
+        [Paths.routes_src,Paths.html_src,Paths.react_src,Paths.webpack_config,Paths.gulp_config],
+        ['routes','babel','webpack','server.restart']
     );
 });
 
-gulp.task('default', ['routes','babel_JSX','babel_reducers','babel_containers','babel_component','webpack','server:start','watch']);
+gulp.task('default', ['routes','babel','webpack','server:start','watch']);

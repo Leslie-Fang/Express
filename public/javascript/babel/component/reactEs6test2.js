@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -7,9 +7,17 @@ exports.App = exports.Test = exports.HelloMessage2 = exports.Todolist = exports.
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _container = require('../../babel/containers/container1.js');
+var _container = require("../../babel/containers/container1.js");
 
 var _container2 = _interopRequireDefault(_container);
+
+var _container3 = require("../../babel/containers/container2.js");
+
+var _container4 = _interopRequireDefault(_container3);
+
+var _container5 = require("../../babel/containers/container3.js");
+
+var _container6 = _interopRequireDefault(_container5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,15 +37,15 @@ var Componet2 = exports.Componet2 = function (_React$Component) {
     }
 
     _createClass(Componet2, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'component2'
+                    "component2"
                 )
             );
         }
@@ -58,15 +66,15 @@ var Myheader = exports.Myheader = function (_React$Component2) {
     }
 
     _createClass(Myheader, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Header'
+                    "Header"
                 )
             );
         }
@@ -92,28 +100,28 @@ var Todolist = exports.Todolist = function (_React$Component3) {
     }
 
     _createClass(Todolist, [{
-        key: 'eachtodo',
+        key: "eachtodo",
         value: function eachtodo(text, i) {
             return React.createElement(
-                'div',
+                "div",
                 { key: i },
                 text.test
             );
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Todolist2'
+                    "Todolist2"
                 ),
                 this.state.todo.map(function (text, i) {
                     return React.createElement(
-                        'div',
+                        "div",
                         { key: i },
                         text.test
                     );
@@ -140,15 +148,15 @@ var HelloMessage2 = exports.HelloMessage2 = function (_React$Component4) {
     }
 
     _createClass(HelloMessage2, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'div',
+                    "div",
                     null,
-                    'Hello world ',
+                    "Hello world ",
                     this.props.name
                 )
             );
@@ -175,23 +183,23 @@ var Test = exports.Test = function (_React$Component5) {
     }
 
     _createClass(Test, [{
-        key: 'handleClick',
+        key: "handleClick",
         value: function handleClick() {
             console.log('Success!'); // null
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'come on!'
+                    "come on!"
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     { onClick: this.handleClick },
                     this.state.text
                 )
@@ -212,23 +220,31 @@ var App = exports.App = function (_React$Component6) {
     }
 
     _createClass(App, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
                 React.createElement(
-                    'h2',
+                    "h2",
                     null,
-                    'User List'
+                    "User List"
                 ),
                 React.createElement(_container2.default, null),
-                React.createElement('hr', null),
+                React.createElement("hr", null),
                 React.createElement(
-                    'h2',
+                    "h2",
                     null,
-                    'User Details'
-                )
+                    "User Details"
+                ),
+                React.createElement(_container4.default, null),
+                React.createElement("hr", null),
+                React.createElement(
+                    "h2",
+                    null,
+                    "User Add"
+                ),
+                React.createElement(_container6.default, null)
             );
         }
     }]);

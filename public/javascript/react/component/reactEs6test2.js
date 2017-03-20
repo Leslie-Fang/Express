@@ -1,4 +1,6 @@
 import Container1 from "../../babel/containers/container1.js";
+import Container2 from "../../babel/containers/container2.js";
+import Container3 from "../../babel/containers/container3.js";
 
 export class Componet2 extends React.Component {
     constructor(props) {
@@ -93,6 +95,10 @@ export class App extends React.Component{
                 <Container1 />
                 <hr />
                 <h2>User Details</h2>
+                <Container2 />
+                <hr />
+                <h2>User Add</h2>
+                <Container3 />
             </div>
         );
     }

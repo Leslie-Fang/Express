@@ -6,7 +6,7 @@ var _reactRedux = require("react-redux");
 
 var _reactEs6test = require("../babel/component/reactEs6test2.js");
 
-var _store = require("./store.js");
+var _store = require("../babel/store.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 

@@ -20,7 +20,8 @@ var Paths = {
     component_src:'public/javascript/react/component/*.js',
     component_dest:'public/javascript/babel/component',*/
     react_src:'public/javascript/react/**/*.js',
-    react_dest:'public/javascript/babel'
+    react_dest:'public/javascript/babel',
+    database_api_src:'databases/*.js'
 };
 
 gulp.task('routes',function(){
@@ -105,7 +106,7 @@ gulp.task( 'server.restart', function() {
 
 gulp.task('watch',function(){
     gulp.watch(
-        [Paths.routes_src,Paths.html_src,Paths.react_src,Paths.webpack_config,Paths.gulp_config],
+        [Paths.routes_src,Paths.html_src,Paths.react_src,Paths.database_api_src,Paths.webpack_config,Paths.gulp_config],
         ['routes','babel','webpack','server.restart']
     );
 });

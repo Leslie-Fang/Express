@@ -4,6 +4,7 @@ import ActiveUserReducer from './reducer2';
 
 
 const allReducers = combineReducers({
+    isFetchingData: false,
     users: reducer1,
     activeUser: ActiveUserReducer
 

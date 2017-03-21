@@ -1,4 +1,4 @@
-var userData=[
+/*var userData=[
     {
         id: 1,
         first: "Bucky",
@@ -23,24 +23,16 @@ var userData=[
         description: "Madi likes her dog but it is really annoying.",
         thumbnail: "http://i.imgur.com/4EMtxHB.png"
     }
-];
-
-var origin_data= userData;
+];*/
+var userData=[];
+//var origin_data= userData;
 export var reducer1 = function(state = userData,action){
 
     switch (action.type) {
         case 'USER_DELETE':
-           // console.log(action.payload.id);
-           // console.log(action.payload);
-            /*userData=[
-                userData[0],userData[2]
-            ];*/
-            //var id = action.payload.id;
             userData = userData.filter(function(item) {
                 return item.id !== action.payload.id;
             });
-            //userData.splice(id,1);
-            console.log(userData);
             return userData;
         case 'USER_ADD':
             userData.push({
@@ -57,11 +49,20 @@ export var reducer1 = function(state = userData,action){
             userData = userData.filter(function(item) {
                 return item.id !== 10000;
             });
-            console.log(userData);
+            //console.log(userData);
             return userData;
+        case 'GET_INIT_DATA':
+            //console.log(action.payload);
+            console.log('GET_INIT_DATA');
+            console.log(action.payload);
+            userData = action.payload;
+            return userData;
+            //return Object.assign({},action.payload);
         default:
-            break;
+            console.log('EMPTY');
+            return userData;
     }
-    console.log(userData);
-    return userData;
+   // console.log(userData);
+    //console.log('EMPTY');
+    //return [];
 };

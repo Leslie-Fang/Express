@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {selectUser,addUser,deleteUser} from '../../babel/actions/index';
+import {selectUser,addUser,deleteUser,initUser} from '../../babel/actions/index';
 
 function mapStateToProps(state) {
     return ({
@@ -9,12 +9,13 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch){
-    return bindActionCreators({selectUser: selectUser,addUser: addUser,deleteUser: deleteUser}, dispatch);
+    return bindActionCreators({selectUser: selectUser,addUser: addUser,deleteUser: deleteUser,initUser: initUser}, dispatch);
 }
 
 class Container1 extends React.Component {
     constructor(props) {
         super(props);
+        this.props.initUser();
     }
     createListItems(){
         return(
@@ -40,5 +41,6 @@ class Container1 extends React.Component {
     }
 }
 
+//store.dispatch({ type: 'INCREMENT' });
 
 export default connect(mapStateToProps,matchDispatchToProps)(Container1);

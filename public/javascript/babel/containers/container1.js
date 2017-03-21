@@ -25,7 +25,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({ selectUser: _index.selectUser, addUser: _index.addUser, deleteUser: _index.deleteUser }, dispatch);
+    return (0, _redux.bindActionCreators)({ selectUser: _index.selectUser, addUser: _index.addUser, deleteUser: _index.deleteUser, initUser: _index.initUser }, dispatch);
 }
 
 var Container1 = function (_React$Component) {
@@ -34,7 +34,10 @@ var Container1 = function (_React$Component) {
     function Container1(props) {
         _classCallCheck(this, Container1);
 
-        return _possibleConstructorReturn(this, (Container1.__proto__ || Object.getPrototypeOf(Container1)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Container1.__proto__ || Object.getPrototypeOf(Container1)).call(this, props));
+
+        _this.props.initUser();
+        return _this;
     }
 
     _createClass(Container1, [{
@@ -93,5 +96,7 @@ var Container1 = function (_React$Component) {
 
     return Container1;
 }(React.Component);
+
+//store.dispatch({ type: 'INCREMENT' });
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, matchDispatchToProps)(Container1);

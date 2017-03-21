@@ -4,6 +4,7 @@ var user = require('./user.js');
 var react = require('./react.js');
 
 router.get('/',function(req,res){
+	console.log('request success!');
 	res.send('hh!');
 })
 

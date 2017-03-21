@@ -1,6 +1,6 @@
 import {Provider} from 'react-redux';
 import {Componet2, Myheader,Todolist,HelloMessage2,Test,App} from "../babel/component/reactEs6test2.js";
-import {store} from "./store.js"
+import {store} from "../babel/store.js"
 
 class Board extends React.Component{
     constructor(props) {

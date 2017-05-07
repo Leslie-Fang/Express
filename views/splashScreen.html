@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/splashScreen.css">
+</head>
+<body>
+<svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" id="welcomeSVG">
+    <!--<g transform="translate(10, 10)">-->
+    <symbol id="s-text">
+        <text text-anchor="middle"
+              x="50%" y="50%" dy=".35em">
+            Leslie
+        </text>
+    </symbol>
+
+    <!-- Duplicate symbols -->
+    <use xlink:href="#s-text" class="text"
+    ></use>
+    <use xlink:href="#s-text" class="text"
+    ></use>
+    <use xlink:href="#s-text" class="text"
+    ></use>
+</svg>
+<!--<img src="/images/popeye.jpg" alt="HTML5 Icon">-->
+<!--<img src="http://omdthfazl.bkt.clouddn.com/YellowMoutain1.jpeg" alt="YellowMoutain1">-->
+
+<!--<script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
+<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>-->
+<!-- <script type="text/babel" src="javascript/controller/bootcontroller.js"></script>-->
+<script src="javascript/main.js"></script>
+</body>
+
+
+</html>

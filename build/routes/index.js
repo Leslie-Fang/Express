@@ -1,1 +1,1 @@
-var express=require("express"),router=express.Router(),user=require("./user.js");router.get("/",function(e,r){r.render("main")}),router.use("/user",user),module.exports=router;
+var express=require("express"),router=express.Router(),user=require("./user.js");router.get("/",function(e,r){r.render("main")}),router.get("/count",function(e,r){r.render("count")}),router.get("/animateMotion",function(e,r){r.render("animateMotion")}),router.get("/splashScreen",function(e,r){r.render("splashScreen")}),router.use("/user",user),module.exports=router;

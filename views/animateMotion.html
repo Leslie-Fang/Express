@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+<p>hhh</p>
+<svg x="0px" y="0px" width="1000px" height="1000px" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+    <!--<g transform="translate(10, 10)">-->
+    <g>
+        <rect x="0" y="0" width="30" height="30" style="fill: #ccc;"/>
+        <circle cx="30" cy="30" r="15" style="fill: #cfc; stroke: green;"/>
+        <animateMotion from="0,0" to="60,30" dur="4s" fill="freeze"/>
+    </g>
+
+    <rect x="0" y="0" width="30" height="30" style="fill: #ccc;">
+        <animateMotion
+                path="M50,125 C 100,25 150,225, 200, 125"
+                dur="6s" fill="freeze"/>
+    </rect>
+
+    <path d="M10,110 A120,120 -45 0,1 110 10 A120,120 -45 0,1 10,110"
+          stroke="lightgrey" stroke-width="2"
+          fill="none" id="theMotionPath"/>
+    <circle cx="" cy="" r="5" fill="red">
+        <!-- Define the motion path animation -->
+        <animateMotion dur="6s" repeatCount="indefinite">
+            <mpath xlink:href="#theMotionPath"/>
+        </animateMotion>
+    </circle>
+</svg>
+<!--<img src="/images/popeye.jpg" alt="HTML5 Icon">-->
+<!--<img src="http://omdthfazl.bkt.clouddn.com/YellowMoutain1.jpeg" alt="YellowMoutain1">-->
+
+<!--<script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
+<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>-->
+<!-- <script type="text/babel" src="javascript/controller/bootcontroller.js"></script>-->
+</body>
+
+
+</html>

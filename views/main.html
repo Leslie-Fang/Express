@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Main</title>
+    <title>SVG</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -12,6 +12,111 @@
   </head>
   <body>
 	  <p>hhh</p>
+      <svg x="0px" y="0px" width="450px" height="100px" viewBox="0 0 450 100" preserveAspectRatio="xMidYMid meet">
+        <!--<g transform="translate(10, 10)">-->
+        <g>
+          <rect x="10" y="5" fill="white" stroke="black" width="90" height="90">
+            <animate
+                    attributeName="width"
+                    attributeType="XML"
+                    from="200" to="20"
+                    begin="0s" dur="5s"
+                    fill="freeze" />
+          </rect>
+          <path d="M10 10 H 90 V 90 H 10 L 10 10" fill="transparent" stroke="red">
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="scale"
+                              from="1" to="4 2"
+                              begin="0s" dur="4s" fill="freeze"/>
+          </path>
+        </g>
+        <g>
+          <circle fill="white" stroke="black" cx="170" cy="50" r="45"> </circle>
+          <polygon fill="white" stroke="black" points="279,5 294,35 328,40 303,62
+      309,94 279,79 258,94 254,62 230,39 263,35"> </polygon>
+          <line fill="none" stroke="black" x1="410" y1="95" x2="440" y2="6"> </line>
+          <path fill="#1EB287">
+            <animate
+                    attributeName="d"
+                    dur="1440ms"
+                    repeatCount="indefinite"
+                    keyTimes="0;
+                       .0625;
+                       .208333333;
+                       .3125;
+                       .395833333;
+                       .645833333;
+                       .833333333;
+                       1"
+                    calcMode="spline"
+                    keySplines="0,0,1,1;
+                         .42,0,.58,1;
+                         .42,0,1,1;
+                         0,0,.58,1;
+                         .42,0,.58,1;
+                         .42,0,.58,1;
+                         .42,0,.58,1"
+                    values="M 0,0
+                     C 50,0 50,0 100,0
+                     100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     Z;
+
+                     M 0,0
+                     C 50,0 50,0 100,0
+                     100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     Z;
+
+                     M 50,0
+                     C 75,25 75,25 100,50
+                     75,75 75,75 50,100
+                     25,75 25,75 0,50
+                     25,25 25,25 50,0
+                     Z;
+
+                     M 25,50
+                     C 37.5,25 37.5,25 50,0
+                     75,50 75,50 100,100
+                     50,100 50,100 0,100
+                     12.5,75 12.5,75 25,50
+                     Z;
+
+                     M 25,50
+                     C 37.5,25 37.5,25 50,0
+                     75,50 75,50 100,100
+                     50,100 50,100 0,100
+                     12.5,75 12.5,75 25,50
+                     Z;
+
+                     M 50,0
+                     C 77.6,0 100,22.4 100,50
+                     100,77.6 77.6,100 50,100
+                     22.4,100, 0,77.6, 0,50
+                     0,22.4, 22.4,0, 50,0
+                     Z;
+
+                     M 50,0
+                     C 77.6,0 100,22.4 100,50
+                     100,77.6 77.6,100 50,100
+                     22.4,100, 0,77.6, 0,50
+                     0,22.4, 22.4,0, 50,0
+                     Z;
+
+                     M 100,0
+                     C 100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     50,0 50,0 100,0
+                     Z;"/>
+          </path>
+
+
+        </g>
+      </svg>
 	  <!--<img src="/images/popeye.jpg" alt="HTML5 Icon">-->
 	  <!--<img src="http://omdthfazl.bkt.clouddn.com/YellowMoutain1.jpeg" alt="YellowMoutain1">-->
 

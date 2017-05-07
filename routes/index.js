@@ -3,7 +3,7 @@ var router = express.Router();
 var user = require('./user.js');
 
 router.get('/',function(req,res){
-	res.send('hh!');
+	res.render("main");
 })
 
 router.use('/user',user);

@@ -7,9 +7,7 @@ var Paths = {
     routes_src:'routes/*.js',
     routes_dest:'build/routes',
     html_src:'views/**',
-    js_src:'public/javascript/controller/**'
-
-
+    js_src:'public/javascript/**'
 };
 
 gulp.task('routes',function(){
@@ -17,8 +15,6 @@ gulp.task('routes',function(){
         .pipe(uglify())
         .pipe(gulp.dest(Paths.routes_dest));
 });
-
-
 
 // run server
 gulp.task( 'server:start', function() {

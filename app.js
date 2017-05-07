@@ -3,6 +3,8 @@ var app = express();
 var conf = require('./config.js');
 var routes = require('./routes');
 var ejs = require('ejs');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 //set the route of the views
 app.set('views','./views');
@@ -10,7 +12,9 @@ app.set('views','./views');
 //use html instead of jade template
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.use('/',routes);
 //static files's routes
